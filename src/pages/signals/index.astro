@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+import Header from '../../components/Header.astro';
+
+const signals = (await getCollection('signals'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Signals"
+      description="Short-form intelligence updates, data anomalies, and field observations from Blackwood Intelligence."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <h1 class="section-heading" style="font-size: 1.9rem;">Signals</h1>
+      <hr class="heavy" style="margin-top: 1.25rem;" />
+
+      {signals.length === 0 ? (
+        <p style="color: var(--text-muted); padding: 3rem 0;">No signals published yet.</p>
+      ) : (
+        <ul class="signals-list">
+          {signals.map((signal) => {
+            const num = signal.id.split('-')[0];
+            const prefix = `Signal ${num}`;
+            return (
+              <li class="signal-item">
+                <div class="signal-item__date">
+                  <span class="signal-item__prefix">{prefix}</span>
+                  <span class="signal-item__date-text">
+                    <FormattedDate date={signal.data.pubDate} />
+                  </span>
+                </div>
+                <div class="signal-item__body">
+                  <p class="signal-item__content">{signal.body}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+
+    </main>
+    <Footer />
+  </body>
+</html>

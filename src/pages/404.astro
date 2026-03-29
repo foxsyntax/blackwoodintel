@@ -1,0 +1,76 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="Record Not Found"
+      description="This document does not exist at this location."
+    />
+  </head>
+  <body>
+    <Header />
+    <main style="display: flex; flex-direction: column; justify-content: center; min-height: 40vh; padding-top: 4rem; padding-bottom: 4rem;">
+
+      <span style="
+        font-family: var(--font-sans);
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        display: block;
+        margin-bottom: 2rem;
+      ">Error 404</span>
+
+      <h1 style="
+        font-family: var(--font-serif);
+        font-size: clamp(1.6rem, 3vw, 2.1rem);
+        font-weight: 700;
+        color: var(--black);
+        line-height: 1.25;
+        margin-bottom: 1.5rem;
+      ">Record Not Found</h1>
+
+      <hr style="border: none; border-top: 2px solid var(--black); margin: 0 0 1.75rem 0;" />
+
+      <p style="
+        font-family: var(--font-sans);
+        font-size: 0.975rem;
+        color: var(--text-secondary);
+        line-height: 1.75;
+        max-width: 480px;
+        margin-bottom: 0.75rem;
+      ">
+        The document at this address does not exist, has been removed,
+        or was never published.
+      </p>
+      <p style="
+        font-family: var(--font-sans);
+        font-size: 0.975rem;
+        color: var(--text-muted);
+        line-height: 1.75;
+        max-width: 480px;
+        margin-bottom: 2.5rem;
+      ">
+        If you were directed here, verify your source.
+      </p>
+
+      <a href="/" style="
+        font-family: var(--font-sans);
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        border-bottom: 1px solid var(--gray-400);
+        width: fit-content;
+        padding-bottom: 1px;
+        transition: color 0.15s, border-color 0.15s;
+      ">← Return to index</a>
+
+    </main>
+    <Footer />
+  </body>
+</html>

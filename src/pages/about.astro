@@ -1,63 +1,187 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title="About"
+      description="Blackwood Intelligence conducts forensic analysis of power, incentives, and systemic collapse."
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+      <h1 class="sr-only">About — Blackwood Intelligence</h1>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+      <hr class="heavy" style="margin-top: 0; margin-bottom: 3rem;" />
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+      <!-- Opening -->
+      <div class="about-opening">
+        <p class="about-lead">
+          Blackwood Intelligence conducts forensic analysis of power, incentives, and systemic collapse.
+        </p>
+        <p class="about-sub">
+          Our work focuses on how systems behave under pressure, particularly when structure
+          and reality begin to diverge.
+        </p>
+      </div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+      <!-- Dossier sections -->
+      <div class="about-body">
+
+        <div class="about-row">
+          <span class="about-row__label">Positioning</span>
+          <div class="about-row__content">
+            <p>Blackwood operates as a small, independent desk. It publishes analysis publicly
+            and undertakes a limited number of private engagements.</p>
+            <p>We work with a limited number of partners.</p>
+          </div>
+        </div>
+
+        <div class="about-row">
+          <span class="about-row__label">Method</span>
+          <div class="about-row__content">
+            <p>Analysis begins with structural questions. Each piece traces incentives, constraints,
+            and information flows to identify where systems behave inconsistently with their
+            apparent design.</p>
+            <p>Where evidence is incomplete, uncertainty is stated explicitly.</p>
+          </div>
+        </div>
+
+        <div class="about-row">
+          <span class="about-row__label">Signals</span>
+          <div class="about-row__content">
+            <p>Signals record shorter observations: early indicators, structural tensions,
+            and anomalies that do not yet warrant full analysis.</p>
+          </div>
+        </div>
+
+        <div class="about-row">
+          <span class="about-row__label">What Blackwood<br />Is Not</span>
+          <div class="about-row__content">
+            <p>Blackwood is not a think tank.</p>
+            <p>It does not produce commentary, advocacy, or narrative-driven analysis.</p>
+            <p>It does not represent any institution, government, or financial interest.</p>
+          </div>
+        </div>
+
+        <div class="about-row about-row--contact">
+          <span class="about-row__label">Contact</span>
+          <div class="about-row__content">
+            <div class="about-contact-links">
+              <a href="mailto:analysis@blackwoodintel.com">analysis@blackwoodintel.com</a>
+              <a href="https://t.me/blackwoodintel" target="_blank" rel="noopener noreferrer">Telegram: @blackwoodintel</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  /* ── Opening block ── */
+  .about-opening {
+    margin-bottom: 3.5rem;
+  }
+
+  .about-lead {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .about-sub {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  /* ── Dossier grid ── */
+  .about-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    border-top: 1px solid var(--gray-200);
+    padding: 1.75rem 0 2rem;
+  }
+
+  /* ── Row label ── */
+  .about-row__label {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding-top: 0.2rem;
+  }
+
+  /* ── Row content ── */
+  .about-row__content p {
+    font-family: var(--font-serif);
+    font-size: 0.9875rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 0.9em;
+  }
+
+  .about-row__content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── Contact ── */
+  .about-contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-contact-links a {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--gray-200);
+    width: fit-content;
+    padding-bottom: 1px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .about-contact-links a:hover {
+    color: var(--black);
+    border-bottom-color: var(--black);
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 580px) {
+    .about-row {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      padding: 1.5rem 0 1.75rem;
+    }
+
+    .about-row__label {
+      padding-top: 0;
+    }
+  }
+</style>

@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blackwood Intelligence — Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #000000; --white: #FFFFFF;
+      --gray-100: #F7F7F7; --gray-200: #D6D6D6;
+      --gray-400: #999999; --gray-600: #555555;
+      --text-primary: #0A0A0A; --text-secondary: #444444; --text-muted: #888888;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
+      --max-width: 720px;
+    }
+    html { font-size: 17px; -webkit-font-smoothing: antialiased; }
+    body { background: var(--white); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.75; }
+    .page { min-height: 100vh; display: flex; flex-direction: column; }
+    main { flex: 1; width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 3rem 1rem; }
+    a { color: var(--black); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s; }
+    a:hover { border-bottom-color: var(--black); }
+    hr { border: none; border-top: 1px solid var(--gray-200); margin: 2rem 0; }
+    hr.heavy { border-top: 2px solid var(--black); }
+
+    /* Page switcher (preview only) */
+    .preview-bar { background: #111; color: #aaa; text-align: center; padding: .5rem; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; display: flex; justify-content: center; gap: 2rem; }
+    .preview-bar button { background: none; border: none; color: #777; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; font-family: var(--font-sans); padding: .15rem .4rem; }
+    .preview-bar button.active { color: #fff; border-bottom: 1px solid #fff; }
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    /* SHARED COMPONENTS */
+    .site-header { width: 100%; padding: 2.75rem 1rem 0; text-align: center; }
+    .site-header__wordmark { font-family: var(--font-serif); font-size: 2.75rem; font-weight: 900; letter-spacing: .16em; color: var(--black); text-transform: uppercase; display: block; margin-bottom: .45rem; border-bottom: none; }
+    .site-header__wordmark:hover { border-bottom: none; }
+    .site-header__tagline { font-size: .8375rem; color: var(--text-primary); font-style: normal; letter-spacing: .02em; }
+    .site-nav-wrapper { width: 100%; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); margin-top: 1.25rem; }
+    .site-nav { width: 100%; max-width: 960px; margin: 0 auto; padding: .875rem 1rem; display: flex; align-items: center; justify-content: space-between; }
+    .site-nav__links { display: flex; gap: 2.25rem; list-style: none; }
+    .site-nav__links a { font-size: .8rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--text-primary); border-bottom: 1px solid transparent; }
+    .site-nav__links a:hover, .site-nav__links a.active { border-bottom-color: var(--black); }
+    .site-nav__contact { font-size: .8rem; color: var(--text-muted); border-bottom: none; }
+    .section-heading { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--black); line-height: 1.2; }
+
+    /* Analysis list */
+    .analysis-list { list-style: none; }
+    .analysis-item { display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid var(--gray-200); align-items: start; }
+    .analysis-item:first-child { padding-top: .9rem; }
+    .analysis-item__meta { display: flex; flex-direction: column; gap: .2rem; padding-top: .2rem; }
+    .analysis-item__number { font-family: var(--font-sans); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); line-height: 1.4; }
+    .analysis-item__date-small { font-family: var(--font-sans); font-size: .68rem; color: var(--gray-400); line-height: 1.4; }
+    .analysis-item__body { display: flex; flex-direction: column; gap: .4rem; }
+    .analysis-item__title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; line-height: 1.35; color: var(--text-primary); display: block; border-bottom: none; }
+    .analysis-item__title:hover { color: var(--gray-600); border-bottom: none; }
+    .analysis-item__excerpt { font-size: .875rem; color: var(--text-muted); line-height: 1.6; }
+    .analysis-item__read { font-family: var(--font-sans); font-size: .78rem; color: var(--text-muted); border-bottom: 1px solid var(--gray-400); width: fit-content; padding-bottom: 1px; margin-top: .2rem; }
+    .analysis-item__read:hover { color: var(--black); border-bottom-color: var(--black); }
+
+    /* Signals */
+    .signals-list { list-style: none; }
+    .signal-item { padding: .95rem 0; border-bottom: 1px solid var(--gray-200); display: grid; grid-template-columns: 100px 1fr; gap: 1.5rem; align-items: start; }
+    .signal-item:first-child { padding-top: .75rem; }
+    .signal-item__date { display: flex; flex-direction: column; gap: .2rem; padding-top: .2rem; }
+    .signal-item__prefix { font-family: var(--font-sans); font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); line-height: 1.4; }
+    .signal-item__date-text { font-size: .68rem; color: var(--gray-400); line-height: 1.4; }
+    .signal-item__body { display: flex; flex-direction: column; gap: .35rem; }
+    .signal-item__content { font-size: .9375rem; color: var(--text-secondary); line-height: 1.65; }
+
+    /* Article page */
+    .article-header { padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--black); }
+    .article-id { font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; color: var(--text-muted); font-family: var(--font-sans); font-weight: 600; margin-bottom: 1rem; display: block; }
+    .article-title-lg { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 700; line-height: 1.2; color: var(--black); margin-bottom: 1rem; }
+    .article-subtitle { font-size: 1.05rem; color: var(--text-muted); line-height: 1.65; font-style: italic; margin-bottom: 0; }
+    .article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: 1.5rem; font-size: .8rem; color: var(--text-muted); font-family: var(--font-sans); }
+    .prose { font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); }
+    .prose h2 { font-family: var(--font-serif); font-size: 1.45rem; color: var(--text-primary); margin: 2.5rem 0 1rem; }
+    .prose p { margin-bottom: 1.5em; }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* 404 page */
+    .not-found { min-height: 40vh; display: flex; flex-direction: column; justify-content: center; padding-top: 4rem; padding-bottom: 4rem; }
+    .not-found__error-tag { font-family: var(--font-sans); font-size: .68rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 2rem; }
+    .not-found__title { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--black); line-height: 1.25; margin-bottom: 1.5rem; }
+    .not-found__text { font-size: .975rem; color: var(--text-secondary); line-height: 1.75; max-width: 480px; margin-bottom: .75rem; }
+    .not-found__sub { font-size: .975rem; color: var(--text-muted); line-height: 1.75; max-width: 480px; margin-bottom: 2.5rem; }
+    .not-found__return { font-family: var(--font-sans); font-size: .8rem; color: var(--text-muted); border-bottom: 1px solid var(--gray-400); width: fit-content; padding-bottom: 1px; }
+    .not-found__return:hover { color: var(--black); border-bottom-color: var(--black); }
+
+    /* Footer */
+    .site-footer { border-top: 1px solid var(--gray-200); padding: 4rem 1rem 3rem; text-align: center; }
+    .site-footer__name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; color: var(--black); letter-spacing: .04em; display: block; margin-bottom: .3rem; }
+    .site-footer__desk { font-size: .75rem; color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase; display: block; margin-bottom: 1rem; }
+    .site-footer__links { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+    .site-footer__links a { font-size: .8rem; color: var(--text-muted); border-bottom: none; }
+    .site-footer__links a:hover { color: var(--black); }
+    .site-footer__copy { margin-top: 1.75rem; font-size: .7rem; color: var(--gray-400); letter-spacing: .05em; }
+  </style>
+</head>
+<body>
+
+  <!-- Preview bar -->
+  <div class="preview-bar">
+    <span style="color:#555; font-size:.65rem;">Preview:</span>
+    <button class="active" onclick="show('home')">Homepage</button>
+    <button onclick="show('article')">Article</button>
+    <button onclick="show('notfound')">404</button>
+  </div>
+
+  <!-- =================== HOMEPAGE =================== -->
+  <div id="view-home" class="page-view active">
+    <div class="page">
+      <header class="site-header">
+        <a href="#" class="site-header__wordmark">Blackwood Intelligence</a>
+        <p class="site-header__tagline">Independent forensic analysis of systems, power, and collapse.</p>
+      </header>
+      <div class="site-nav-wrapper">
+        <nav class="site-nav">
+          <ul class="site-nav__links">
+            <li><a href="#" class="active">Analysis</a></li>
+            <li><a href="#">Signals</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <a href="mailto:analysis@blackwoodintel.com" class="site-nav__contact">analysis@blackwoodintel.com</a>
+        </nav>
+      </div>
+      <main>
+        <section>
+          <h2 class="section-heading">Analysis</h2>
+          <hr class="heavy" />
+          <ul class="analysis-list">
+            <li class="analysis-item">
+              <div class="analysis-item__meta">
+                <span class="analysis-item__number">Analysis 002</span>
+                <span class="analysis-item__date-small">Jan 8, 2025</span>
+              </div>
+              <div class="analysis-item__body">
+                <a href="#" class="analysis-item__title">The Dollar Trap: Reserve Currency Status as Structural Constraint</a>
+                <p class="analysis-item__excerpt">How the US dollar's role as global reserve currency creates policy constraints that are rarely acknowledged in mainstream economic discourse — and what this implies for the next decade.</p>
+                <a href="#" class="analysis-item__read">Read &rarr;</a>
+              </div>
+            </li>
+            <li class="analysis-item">
+              <div class="analysis-item__meta">
+                <span class="analysis-item__number">Analysis 001</span>
+                <span class="analysis-item__date-small">Nov 20, 2024</span>
+              </div>
+              <div class="analysis-item__body">
+                <a href="#" class="analysis-item__title">Why Organized Systems Still Produce Chaos</a>
+                <p class="analysis-item__excerpt">A forensic examination of how institutional design, incentive structures, and information asymmetry combine to produce disorder — even in systems built explicitly to prevent it.</p>
+                <a href="#" class="analysis-item__read">Read &rarr;</a>
+              </div>
+            </li>
+          </ul>
+          <p style="margin-top:1.75rem;font-size:.82rem;"><a href="#">View archive &rarr;</a></p>
+        </section>
+        <hr style="margin:3rem 0;" />
+        <section>
+          <h2 class="section-heading">Signals</h2>
+          <hr class="heavy" />
+          <ul class="signals-list">
+            <li class="signal-item">
+              <div class="signal-item__date">
+                <span class="signal-item__prefix">Signal 003</span>
+                <span class="signal-item__date-text">Mar 18, 2025</span>
+              </div>
+              <div class="signal-item__body">
+                <p class="signal-item__content">The ECB's internal working group on TARGET2 imbalances has been quietly reconvened. Imbalances between northern and southern member states have re-widened to levels approaching the 2012 stress period. Structural indicator, not a crisis signal — but structural indicators become crisis signals when external conditions shift.</p>
+              </div>
+            </li>
+            <li class="signal-item">
+              <div class="signal-item__date">
+                <span class="signal-item__prefix">Signal 002</span>
+                <span class="signal-item__date-text">Mar 1, 2025</span>
+              </div>
+              <div class="signal-item__body">
+                <p class="signal-item__content">Chinese capital outflows accelerated in February. State-directed inflows appear to be partially offsetting this in equity markets, creating surface stability that conceals underlying pressure.</p>
+              </div>
+            </li>
+            <li class="signal-item">
+              <div class="signal-item__date">
+                <span class="signal-item__prefix">Signal 001</span>
+                <span class="signal-item__date-text">Feb 14, 2025</span>
+              </div>
+              <div class="signal-item__body">
+                <p class="signal-item__content">The Fed's decision to hold rates while headline CPI remains above target suggests the implicit reaction function has shifted. The question is not whether they will cut — they will — but what threshold now constitutes permission.</p>
+              </div>
+            </li>
+          </ul>
+          <p style="margin-top:1.75rem;font-size:.82rem;"><a href="#">View all signals &rarr;</a></p>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <span class="site-footer__name">Blackwood Intelligence</span>
+        <span class="site-footer__desk">Forensic Analysis Desk</span>
+        <div class="site-footer__links">
+          <a href="mailto:analysis@blackwoodintel.com">analysis@blackwoodintel.com</a>
+          <a href="#">Telegram: @blackwoodintel</a>
+          <a href="/rss.xml">RSS Feed</a>
+        </div>
+        <p class="site-footer__copy">&copy; 2025 Blackwood Intelligence. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- =================== ARTICLE PAGE =================== -->
+  <div id="view-article" class="page-view">
+    <div class="page">
+      <header class="site-header">
+        <a href="#" class="site-header__wordmark">Blackwood Intelligence</a>
+        <p class="site-header__tagline">Independent forensic analysis of systems, power, and collapse.</p>
+      </header>
+      <div class="site-nav-wrapper">
+        <nav class="site-nav">
+          <ul class="site-nav__links">
+            <li><a href="#" class="active">Analysis</a></li>
+            <li><a href="#">Signals</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <a href="mailto:analysis@blackwoodintel.com" class="site-nav__contact">analysis@blackwoodintel.com</a>
+        </nav>
+      </div>
+      <main>
+        <article>
+          <header class="article-header">
+            <span class="article-id">Blackwood Analysis 002</span>
+            <h1 class="article-title-lg">The Dollar Trap: Reserve Currency Status as Structural Constraint</h1>
+            <p class="article-subtitle">How the US dollar's role as global reserve currency creates policy constraints that are rarely acknowledged in mainstream economic discourse.</p>
+            <div class="article-meta">
+              <span>Jan 8, 2025</span>
+              <span>·</span>
+              <span>Published</span>
+              <span>·</span>
+              <span>~9 min read</span>
+            </div>
+          </header>
+          <div class="prose">
+            <p>The conventional narrative about dollar dominance is a story of American power. The United States issues the world's reserve currency; therefore, it can borrow cheaply, run persistent deficits, and project financial influence globally. This narrative is accurate as far as it goes. It does not go very far.</p>
+            <p>What the narrative omits is the constraint side of the ledger. Reserve currency status is not a free lunch. It is an arrangement with specific structural costs — costs that accumulate quietly until they become impossible to ignore.</p>
+            <h2>The Triffin Dilemma, Revisited</h2>
+            <p>In 1960, economist Robert Triffin identified a fundamental tension in the Bretton Woods system. For the world to have enough dollars to conduct international trade, the United States had to run persistent current account deficits. But persistent deficits would eventually undermine confidence in the dollar's value. The system contained the seeds of its own instability.</p>
+            <p>Bretton Woods collapsed in 1971. The Triffin dilemma did not. It simply changed form...</p>
+          </div>
+        </article>
+        <hr style="margin-top:3rem;" />
+        <p style="font-size:.8rem;color:var(--text-muted);padding:1rem 0;">
+          <a href="#">← Analysis</a>
+        </p>
+      </main>
+      <footer class="site-footer">
+        <span class="site-footer__name">Blackwood Intelligence</span>
+        <span class="site-footer__desk">Forensic Analysis Desk</span>
+        <div class="site-footer__links">
+          <a href="mailto:analysis@blackwoodintel.com">analysis@blackwoodintel.com</a>
+          <a href="#">Telegram: @blackwoodintel</a>
+        </div>
+        <p class="site-footer__copy">&copy; 2025 Blackwood Intelligence. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- =================== 404 PAGE =================== -->
+  <div id="view-notfound" class="page-view">
+    <div class="page">
+      <header class="site-header">
+        <a href="#" class="site-header__wordmark">Blackwood Intelligence</a>
+        <p class="site-header__tagline">Independent forensic analysis of systems, power, and collapse.</p>
+      </header>
+      <div class="site-nav-wrapper">
+        <nav class="site-nav">
+          <ul class="site-nav__links">
+            <li><a href="#">Analysis</a></li>
+            <li><a href="#">Signals</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <a href="mailto:analysis@blackwoodintel.com" class="site-nav__contact">analysis@blackwoodintel.com</a>
+        </nav>
+      </div>
+      <main>
+        <div class="not-found">
+          <span class="not-found__error-tag">Error 404</span>
+          <h1 class="not-found__title">Record Not Found</h1>
+          <hr class="heavy" style="margin:0 0 1.75rem 0;" />
+          <p class="not-found__text">The document at this address does not exist, has been removed, or was never published.</p>
+          <p class="not-found__sub">If you were directed here, verify your source.</p>
+          <a href="#" class="not-found__return">← Return to index</a>
+        </div>
+      </main>
+      <footer class="site-footer">
+        <span class="site-footer__name">Blackwood Intelligence</span>
+        <span class="site-footer__desk">Forensic Analysis Desk</span>
+        <div class="site-footer__links">
+          <a href="mailto:analysis@blackwoodintel.com">analysis@blackwoodintel.com</a>
+          <a href="#">Telegram: @blackwoodintel</a>
+        </div>
+        <p class="site-footer__copy">&copy; 2025 Blackwood Intelligence. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function show(view) {
+      document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.preview-bar button').forEach(el => el.classList.remove('active'));
+      document.getElementById('view-' + view).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
