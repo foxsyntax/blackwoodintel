@@ -43,4 +43,4 @@ What falls outside of the established logic it is not ignored. It is rendered as
 
 ---
 
-*Blackwood Analysis 001 — Published November 2024*
+*Blackwood Analysis 001 — Published April 2026*
