@@ -37,4 +37,4 @@ Causality is not always discovered. It is often constructed to keep the system a
 
 ---
 
-*Blackwood Analysis 001 — Published April 2026*
+*Blackwood Analysis 002 — Published April 2026*
