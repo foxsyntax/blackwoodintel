@@ -10,7 +10,7 @@ There are outcomes the mind cannot leave unexplained.
 
 A system cannot operate in the absence of causality. When an event cannot be assigned a cause, it cannot be integrated into the system’s model of reality. The result is not uncertainty, but instability.
 
-To continue functioning, the system produces an explanation
+To continue functioning, the system produces an explanation.
 
 ## The Necessity of Cause
 Causality is not optional. It is a requirement for cognition to function. Without cause, there is no continuity, and without continuity, no basis for action. A system that cannot explain what has occurred cannot decide what to do next. An unexplained outcome cannot be tolerated. It must be resolved.
