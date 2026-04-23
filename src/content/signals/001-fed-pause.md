@@ -1,6 +1,6 @@
 ---
-pubDate: 2025-02-14
-tag: "Monetary Policy"
+pubDate: 2026-04-18
+tag: "Observation"
 ---
 
-The Fed's decision to hold rates at 5.25–5.5% through Q1 2025 while headline CPI remains above target suggests the implicit reaction function has shifted. The question is not whether they will cut — they will — but what threshold now constitutes permission. Worth monitoring: the spread between stated mandate and actual trigger conditions is widening.
+Systems do not preserve themselves by remaining intact. They preserve themselves by discarding what they cannot sustain. What is lost is often mistaken for weakness. It is the cost of survival. The advantage is not speed. It is the range of what a system is willing to sacrifice. And most systems collapse not because they cannot adapt, but because there are things they refuse to lose.
