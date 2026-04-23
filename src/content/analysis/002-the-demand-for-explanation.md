@@ -20,19 +20,17 @@ Outcomes do not merely invite explanation. They impose it.
 
 When a system encounters an event it cannot account for, it does not wait for truth. It selects a cause that allows the outcome to exist within its framework. The question is not “what is correct,” but “what is sufficient to restore coherence.”
 
-Causality, in this process, is not discovered. It is reconstructed. The explanation does not emerge from the event. It is shaped to contain it. Once formed, it closes the loop. The system does not require accurate explanations. It requires complete ones. This pattern does not appear in isolation. It repeats across systems that cannot tolerate uncertainty.
+Causality, in this process, is not discovered. It is reconstructed. The system does not require accurate explanations. It requires complete ones. 
 
 ## The Loop of Misidentification
-When the true cause is inaccessible, the system substitutes one. That substitute does not remain tentative. It becomes operational. Decisions are made based on it. Resources are allocated toward it. Strategies are constructed around it. If the cause is incorrect, the response will fail. But failure does not lead to reevaluation. It leads to reinforcement.
-
-The system does not repeat the problem. It repeats the misidentification of the problem. Each iteration strengthens the false cause, not because it is validated, but because abandoning it would reintroduce instability. The explanation is no longer a tool. It becomes a condition for the system’s coherence.
+When the true cause is inaccessible, the system substitutes one. That substitute does not remain tentative. It becomes operational. Decisions, resources, and strategies begin to align around it. The system does not repeat the problem. It repeats the misidentification of the problem. Each iteration strengthens the false cause, because abandoning it would reintroduce instability. 
 
 ## Beyond Explanation
-Systems do not seek truth. They seek survivable explanations. When reality produces outcomes that cannot be explained, the system constructs causality to preserve coherence. When that causality is incorrect, it does not remain neutral. It shapes action. It directs attention. It filters perception.
+Systems do not seek truth. They seek survivable explanations. When that causality is incorrect, it does not remain neutral. It shapes action. It directs attention. It filters perception. The explanation does not restore control. It creates the appearance of it.
 
 What is selected as cause defines what is seen as relevant. What is excluded disappears from consideration entirely. To explain is to exclude. Over time, the explanation begins to defend itself. New information is interpreted in ways that preserve it. Contradictions are absorbed, reframed, or dismissed. The system is no longer searching for the cause. It is protecting the one it has chosen.
 
-Causality is not always discovered. It is often constructed to keep the system alive. And in doing so, it ensures that the conditions which produced the failure remain unresolved. The explanation does not restore control. It creates the appearance of it.
+Causality is not always discovered. It is often constructed to keep the system alive. And in doing so, it ensures that the conditions which produced the failure remain unresolved.
 
 
 ---
