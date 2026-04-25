@@ -30,7 +30,7 @@ const signals = (await getCollection('signals'))
         <ul class="signals-list">
           {signals.map((signal) => {
             const num = signal.id.split('-')[0];
-            const prefix = `Signal ${num}`;
+            const prefix = num;
             return (
               <li class="signal-item">
                 <div class="signal-item__date">
