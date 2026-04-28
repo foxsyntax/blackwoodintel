@@ -473,6 +473,74 @@ hr.heavy {
 
 .prose li { margin-bottom: 0.5em; line-height: 1.7; }
 
+/* --- Display Equation Block --- */
+
+.eq-block {
+  margin: 2.75rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  text-align: center;
+}
+
+.eq-formula {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.eq-terms {
+  margin: 2rem 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.eq-term {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  align-items: start;
+  padding: 1rem 0;
+  border-top: 1px solid var(--gray-200);
+  text-align: left;
+}
+
+.eq-term:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.eq-term dt {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding-top: 0.15rem;
+  line-height: 1.5;
+}
+
+.eq-term dd {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .eq-term {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+}
+
 /* --- About Page --- */
 
 .about-intro {
