@@ -35,7 +35,7 @@ At this point, the objective shifts. The system is no longer trying to determine
 ## Asymmetric Doubt
 The system is caught between wanting the outcome to be true and being unable to trust that it is. This contradiction does not resolve itself. It compounds.
 
-When the opponent behaves in alignment with the desired outcome, the system doubts. It becomes suspicious of how easily the scenario appears to unfold. When the opponent deviates, the system reinterprets the deviation to fit the original expectation. There is no input that allows exit. Every signal reinforces the loop. ecursion no longer serves to understand the opponent. It exists to stabilize an internal contradiction. The system is no longer interacting with the opponent. It is interacting with a projection it cannot abandon.
+When the opponent behaves in alignment with the desired outcome, the system doubts. It becomes suspicious of how easily the scenario appears to unfold. When the opponent deviates, the system reinterprets the deviation to fit the original expectation. There is no input that allows exit. Every signal reinforces the loop. Recursion no longer serves to understand the opponent. It exists to stabilize an internal contradiction. The system is no longer interacting with the opponent. It is interacting with a projection it cannot abandon.
 
 ## Predictive Narcissism
 Interpretation ceases to be a tool for discovery. It becomes a tool for preservation. The system does not interpret the opponent as it is. It reshapes the opponent into the version required to validate its desired outcome. Data is no longer assessed for accuracy, but for compatibility.
