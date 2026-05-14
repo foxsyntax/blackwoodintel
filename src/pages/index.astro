@@ -10,6 +10,10 @@ const analyses = (await getCollection('analysis'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 5);
 
+const anatomyCases = (await getCollection('anatomy'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
 const signals = (await getCollection('signals'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 6);
@@ -59,6 +63,45 @@ const signals = (await getCollection('signals'))
 
         <p style="margin-top: 1.75rem; font-size: 0.82rem;">
           <a href="/analysis">View archive &rarr;</a>
+        </p>
+      </section>
+
+      <hr style="margin: 3rem 0;" />
+
+      <!-- Anatomy -->
+      <section>
+        <h2 class="section-heading">Anatomy</h2>
+        <hr class="heavy" />
+
+        {anatomyCases.length === 0 ? (
+          <p style="color: var(--text-muted); padding: 2rem 0;">No case studies published yet.</p>
+        ) : (
+          <ul class="analysis-list">
+            {anatomyCases.map((c) => (
+              <li class="analysis-item">
+                <div class="analysis-item__meta">
+                  <span class="analysis-item__number">{c.data.caseFile}</span>
+                  <span class="analysis-item__date-small">
+                    <FormattedDate date={c.data.pubDate} />
+                  </span>
+                </div>
+                <div class="analysis-item__body">
+                  <a href={`/anatomy/${c.id}/`} class="analysis-item__title">
+                    {c.data.title}
+                  </a>
+                  <span style="display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-bottom: 0.35rem; text-transform: uppercase; letter-spacing: 0.04em;">{c.data.event}</span>
+                  {c.data.lede && (
+                    <p class="analysis-item__excerpt">{c.data.lede}</p>
+                  )}
+                  <a href={`/anatomy/${c.id}/`} class="analysis-item__read">Read &rarr;</a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        <p style="margin-top: 1.75rem; font-size: 0.82rem;">
+          <a href="/anatomy">View all cases &rarr;</a>
         </p>
       </section>
 

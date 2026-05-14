@@ -28,7 +28,8 @@ const signals = defineCollection({
 const anatomy = defineCollection({
   loader: glob({ base: './src/content/anatomy', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
-    title: z.string(),
+    title: z.string(),                       // plain text — used in meta, listings
+    titleHtml: z.string().optional(),        // optional HTML title for the article H1
     number: z.string(),                      // e.g. "001"
     caseFile: z.string(),                    // e.g. "ANT-001"
     event: z.string(),                       // e.g. "VW Short Squeeze, Oct 2008"

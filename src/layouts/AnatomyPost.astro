@@ -9,6 +9,7 @@ type Props = CollectionEntry<'anatomy'>['data'];
 
 const {
   title,
+  titleHtml,
   number,
   caseFile,
   event,
@@ -80,7 +81,7 @@ const jsonLd = {
 
         <div class="anatomy-title-block">
           <span class="anatomy-type-tag">{typeTag}</span>
-          <h1 class="anatomy-title" set:html={title} />
+          <h1 class="anatomy-title" set:html={titleHtml ?? title} />
           <p class="anatomy-lede">{lede}</p>
           {pathogens.length > 0 && (
             <div class="anatomy-pathogens">
