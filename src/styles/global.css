@@ -25,6 +25,8 @@
   --font-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-condensed: 'Barlow Condensed', 'Arial Narrow', sans-serif;
 
   --max-width: 720px;
   --header-width: 960px;
@@ -692,5 +694,434 @@ hr.heavy {
   .article-meta {
     flex-wrap: wrap;
     gap: 0.4rem 0.75rem;
+  }
+}
+
+/* ================================================================
+   ANATOMY — Forensic Case Study Layout
+   ================================================================ */
+
+body.anatomy-page {
+  background-color: #f7f4ef;
+}
+
+/* ── Listing page intro ── */
+.anatomy-intro { margin-bottom: 2.5rem; }
+
+.anatomy-intro__headline {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.anatomy-intro__sub {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* ── Listing items ── */
+.anatomy-list { list-style: none; padding: 0; margin: 0; }
+
+.anatomy-list-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  align-items: start;
+}
+
+.anatomy-list-item__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-top: 0.15rem;
+}
+
+.anatomy-list-item__id {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.anatomy-list-item__date {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  color: var(--gray-400);
+  font-variant-numeric: tabular-nums;
+}
+
+.anatomy-list-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.anatomy-list-item__title {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+  border-bottom: none;
+  line-height: 1.35;
+  transition: color 0.15s ease;
+}
+
+.anatomy-list-item__title:hover {
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+}
+
+.anatomy-list-item__event {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.anatomy-list-item__pathogen {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.anatomy-list-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.15rem;
+}
+
+.anatomy-list-item__tag {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--gray-200);
+  padding: 0.15rem 0.4rem;
+}
+
+/* ── Article: case file header ── */
+.anatomy-main {
+  max-width: 820px;
+}
+
+.anatomy-case-header {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 2.5rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.anatomy-fields { border-top: 1px solid var(--gray-200); }
+
+.anatomy-field {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.anatomy-field__label {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.anatomy-field__value {
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.anatomy-type-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid var(--gray-200);
+  padding: 0.25rem 0.625rem;
+  margin-bottom: 1.25rem;
+}
+
+.anatomy-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--black);
+  margin-bottom: 1.25rem;
+}
+
+.anatomy-title em { font-style: italic; font-weight: 400; }
+
+.anatomy-lede {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.anatomy-pathogens { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+
+.anatomy-pathogen {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 0.19rem 0.5rem;
+}
+
+/* ── Structure map ── */
+.anatomy-structure-map { margin-bottom: 3.5rem; }
+
+.anatomy-map-label {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.anatomy-map-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--gray-200);
+  border: 1px solid var(--gray-200);
+}
+
+.anatomy-map-cell {
+  background: #f7f4ef;
+  padding: 0.875rem 0.875rem 0.75rem;
+}
+
+.anatomy-map-num {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.375rem;
+  letter-spacing: 0.06em;
+}
+
+.anatomy-map-title {
+  font-family: var(--font-condensed);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ── Body sections (two-column gutter layout) ── */
+.anatomy-body { display: flex; flex-direction: column; }
+
+.anatomy-section {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0 2.5rem;
+}
+
+.anatomy-section__gutter { padding-top: 2px; }
+
+.anatomy-section__gutter::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--black);
+  margin-bottom: 0.625rem;
+}
+
+.anatomy-section--verdict .anatomy-section__gutter::before {
+  height: 2px;
+}
+
+.anatomy-gutter__num {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.anatomy-gutter__title {
+  font-family: var(--font-mono);
+  font-size: 0.59rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.45;
+  display: block;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.anatomy-gutter__pathogens-label {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.anatomy-gutter__pathogen {
+  font-family: var(--font-condensed);
+  font-size: 0.69rem;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.anatomy-gutter__sub {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  line-height: 1.6;
+}
+
+.anatomy-section__body {
+  padding-top: 2px;
+  padding-bottom: 3.75rem;
+  border-top: 1px solid var(--black);
+}
+
+.anatomy-section--verdict .anatomy-section__body {
+  border-top: 2px solid var(--black);
+}
+
+.anatomy-section__title {
+  font-family: var(--font-condensed);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin-bottom: 1.375rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.anatomy-section__body p {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: var(--text-primary);
+  margin-bottom: 1.125rem;
+}
+
+.anatomy-section__body p:last-child { margin-bottom: 0; }
+
+/* ── Pull quote ── */
+.anatomy-pull {
+  margin: 2rem 0;
+  padding: 0 0 0 1.125rem;
+  border-left: 1.5px solid var(--black);
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+/* ── Axiom box ── */
+.anatomy-axiom {
+  margin-top: 2.25rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--gray-200);
+  background: rgba(0,0,0,0.025);
+}
+
+.anatomy-axiom__label {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.625rem;
+}
+
+.anatomy-axiom p {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+/* ── Article footer row ── */
+.anatomy-footer-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0 2.5rem;
+  margin-top: 0;
+}
+
+.anatomy-footer-body {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.anatomy-footer-text {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+/* ── Anatomy mobile ── */
+@media (max-width: 620px) {
+  .anatomy-case-header,
+  .anatomy-section,
+  .anatomy-footer-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .anatomy-map-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .anatomy-list-item {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
   }
 }

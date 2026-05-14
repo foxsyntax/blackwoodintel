@@ -1,0 +1,10 @@
+---
+interface Props {
+  label?: string;
+}
+const { label = 'Core axiom' } = Astro.props;
+---
+<div class="anatomy-axiom">
+  <span class="anatomy-axiom__label">{label}</span>
+  <slot />
+</div>

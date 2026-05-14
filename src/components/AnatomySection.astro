@@ -1,0 +1,39 @@
+---
+interface Props {
+  num: string;
+  title: string;
+  pathogens?: string[];
+  verdict?: boolean;
+  verdictSub?: string;
+}
+
+const {
+  num,
+  title,
+  pathogens = [],
+  verdict = false,
+  verdictSub,
+} = Astro.props;
+---
+
+<div class={`anatomy-section${verdict ? ' anatomy-section--verdict' : ''}`}>
+  <div class="anatomy-section__gutter">
+    <span class="anatomy-gutter__num">{num}</span>
+    <span class="anatomy-gutter__title">{title}</span>
+    {verdict && verdictSub && (
+      <span class="anatomy-gutter__sub" set:html={verdictSub.replace(/\n/g, '<br/>')} />
+    )}
+    {!verdict && pathogens.length > 0 && (
+      <div class="anatomy-gutter__pathogens">
+        <span class="anatomy-gutter__pathogens-label">Pathogens</span>
+        {pathogens.map((p) => (
+          <span class="anatomy-gutter__pathogen">{p}</span>
+        ))}
+      </div>
+    )}
+  </div>
+  <div class="anatomy-section__body">
+    <h2 class="anatomy-section__title">{title}</h2>
+    <slot />
+  </div>
+</div>

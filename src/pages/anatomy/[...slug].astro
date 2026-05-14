@@ -1,0 +1,21 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import AnatomyPost from '../../layouts/AnatomyPost.astro';
+
+export async function getStaticPaths() {
+  const cases = await getCollection('anatomy');
+  return cases.map((entry) => ({
+    params: { slug: entry.id },
+    props: entry,
+  }));
+}
+
+type Props = CollectionEntry<'anatomy'>;
+
+const entry = Astro.props;
+const { Content } = await render(entry);
+---
+
+<AnatomyPost {...entry.data}>
+  <Content />
+</AnatomyPost>
