@@ -9,7 +9,7 @@ import Header from '../components/Header.astro';
   <head>
     <BaseHead
       title="About"
-      description="Blackwood Intelligence conducts forensic analysis of power, incentives, and systemic collapse."
+      description="Blackwood Intelligence conducts forensic analysis of systems, incentives, and structural failure."
     />
   </head>
   <body>
@@ -23,11 +23,15 @@ import Header from '../components/Header.astro';
       <!-- Opening -->
       <div class="about-opening">
         <p class="about-lead">
-          Blackwood Intelligence conducts forensic analysis of power, incentives, and systemic collapse.
+          Blackwood Intelligence conducts forensic analysis of systems, incentives, and structural failure.
         </p>
         <p class="about-sub">
-          Our work focuses on how systems behave under pressure, particularly when structure
-          and reality begin to diverge.
+          Our work focuses on how organizations, markets, and institutions behave under pressure —
+          particularly when incentives, information flow, and operational reality begin diverging.
+        </p>
+        <p class="about-sub">
+          Blackwood operates independently and publishes analysis exploring collapse dynamics,
+          systemic adaptation, and strategic uncertainty across complex environments.
         </p>
       </div>
 
@@ -37,19 +41,23 @@ import Header from '../components/Header.astro';
         <div class="about-row">
           <span class="about-row__label">Positioning</span>
           <div class="about-row__content">
-            <p>Blackwood operates as a small, independent desk. It publishes analysis publicly
-            and undertakes a limited number of private engagements.</p>
-            <p>We work with a limited number of partners.</p>
+            <p>Blackwood is a small independent research desk.</p>
+            <p>Some work is published publicly through Analysis, Anatomy, and Signals.
+            Other conversations remain private.</p>
+            <p>The objective is not commentary, prediction theater, or narrative alignment.
+            The objective is structural clarity: understanding how systems behave when pressure
+            exceeds the assumptions holding them together.</p>
           </div>
         </div>
 
         <div class="about-row">
           <span class="about-row__label">Method</span>
           <div class="about-row__content">
-            <p>Analysis begins with structural questions. Each piece traces incentives, constraints,
-            and information flows to identify where systems behave inconsistently with their
-            apparent design.</p>
-            <p>Where evidence is incomplete, uncertainty is stated explicitly.</p>
+            <p>Analysis begins with structural questions rather than conclusions.</p>
+            <p>Each piece traces incentives, constraints, dependencies, and information flow
+            to identify where systems become inconsistent with their apparent design.</p>
+            <p>Where evidence is incomplete, uncertainty is stated explicitly rather than
+            concealed behind certainty.</p>
           </div>
         </div>
 
@@ -57,22 +65,30 @@ import Header from '../components/Header.astro';
           <span class="about-row__label">Signals</span>
           <div class="about-row__content">
             <p>Signals record shorter observations: early indicators, structural tensions,
-            and anomalies that do not yet warrant full analysis.</p>
+            asymmetries, and emerging anomalies that may not yet justify full analysis.</p>
+            <p>Some signals remain isolated. Others later develop into larger structural failures.</p>
           </div>
         </div>
 
         <div class="about-row">
-          <span class="about-row__label">What Blackwood<br />Is Not</span>
+          <span class="about-row__label">Engagements</span>
           <div class="about-row__content">
-            <p>Blackwood is not a think tank.</p>
-            <p>It does not produce commentary, advocacy, or narrative-driven analysis.</p>
-            <p>It does not represent any institution, government, or financial interest.</p>
+            <p>Blackwood occasionally works with researchers, operators, and organizations navigating:</p>
+            <ul class="about-engagement-list">
+              <li>systemic instability</li>
+              <li>incentive misalignment</li>
+              <li>strategic uncertainty</li>
+              <li>organizational adaptation under pressure</li>
+              <li>structural risk and failure dynamics</li>
+            </ul>
+            <p>Most conversations begin privately.</p>
           </div>
         </div>
 
         <div class="about-row about-row--contact">
           <span class="about-row__label">Contact</span>
           <div class="about-row__content">
+            <p>For research discussions, inquiries, or private engagements:</p>
             <div class="about-contact-links">
               <a href="mailto:analysis@blackwoodintel.com">analysis@blackwoodintel.com</a>
               <a href="https://t.me/blackwoodintel" target="_blank" rel="noopener noreferrer">Telegram: @blackwoodintel</a>
@@ -106,6 +122,10 @@ import Header from '../components/Header.astro';
     font-size: 1.05rem;
     color: var(--text-secondary);
     line-height: 1.65;
+    margin-bottom: 0.75rem;
+  }
+
+  .about-sub:last-child {
     margin-bottom: 0;
   }
 
@@ -149,12 +169,35 @@ import Header from '../components/Header.astro';
     margin-bottom: 0;
   }
 
+  /* ── Engagements list ── */
+  .about-engagement-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.9em 0;
+  }
+
+  .about-engagement-list li {
+    font-family: var(--font-serif);
+    font-size: 0.9875rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding-left: 1em;
+    position: relative;
+  }
+
+  .about-engagement-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+  }
+
   /* ── Contact ── */
   .about-contact-links {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
   }
 
   .about-contact-links a {
