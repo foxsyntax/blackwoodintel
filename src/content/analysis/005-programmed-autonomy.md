@@ -1,6 +1,6 @@
 ---
 title: "Programmable Autonomy"
-number: "004"
+number: "005"
 description: "Detection is not the bottleneck. Legitimacy is."
 pubDate: 2026-05-21
 status: "Published"
