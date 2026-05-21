@@ -18,57 +18,34 @@ const {
   type = 'website',
 } = Astro.props;
 
-// Browser tab: "Article Title — Blackwood Intelligence" / homepage: "Blackwood Intelligence"
 const fullTitle = title === SITE_TITLE ? title : `${title} — ${SITE_TITLE}`;
-
-// OG/Twitter title: plain title only (no site suffix)
-const ogTitle = title;
-
 const ogImage = new URL(image, Astro.site ?? SITE_URL).href;
 ---
 
-<!-- Charset & Viewport -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="generator" content={Astro.generator} />
 
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="/favicon.png" />
-
-<!-- Sitemap & RSS -->
-<link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="alternate" type="application/rss+xml" title="Blackwood Intelligence — Analysis" href="/rss.xml" />
-
-<!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" type="application/rss+xml" title="Blackwood Intelligence" href="/rss.xml" />
 
-<!-- Primary Meta Tags -->
 <title>{fullTitle}</title>
-<meta name="title" content={fullTitle} />
 <meta name="description" content={description} />
-<meta name="author" content="Blackwood Intelligence" />
-<meta name="robots" content="index, follow" />
-<meta name="theme-color" content="#ffffff" />
 
-<!-- Open Graph -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:site_name" content={SITE_TITLE} />
-<meta property="og:title" content={ogTitle} />
+<meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:locale" content="en_US" />
 
-<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={canonicalURL} />
-<meta name="twitter:title" content={ogTitle} />
+<meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
 
-<!-- Google Fonts: Source Serif 4 + Libre Baskerville + Inter -->
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
