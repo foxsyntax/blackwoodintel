@@ -43,6 +43,10 @@ const anatomy = defineCollection({
       num: z.string(),
       title: z.string(),
     })).default([]),
+    resources: z.array(z.object({
+      label: z.string(),
+      href: z.string(),
+    })).default([]),
   }),
 });
 

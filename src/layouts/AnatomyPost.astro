@@ -20,6 +20,7 @@ const {
   lede,
   pathogens,
   structure,
+  resources,
 } = Astro.props;
 
 const pubMonth = pubDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
@@ -77,6 +78,23 @@ const jsonLd = {
             <span class="anatomy-field__label">Published</span>
             <span class="anatomy-field__value">{pubMonth}</span>
           </div>
+          {resources.length > 0 && (
+            <div class="anatomy-field anatomy-field--resources">
+              <span class="anatomy-field__label">Resources</span>
+              <div class="anatomy-field__resources">
+                {resources.map((r) => (
+                  <a
+                    href={r.href}
+                    class="anatomy-resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {r.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <div class="anatomy-title-block">

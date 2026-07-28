@@ -852,6 +852,39 @@ body.anatomy-page {
   line-height: 1.5;
 }
 
+.anatomy-field--resources {
+  margin-top: 0.25rem;
+}
+
+.anatomy-field__resources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.anatomy-resource-link {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  border-bottom: 1px solid var(--gray-200);
+  width: fit-content;
+  padding-bottom: 1px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  text-decoration: none;
+}
+
+.anatomy-resource-link::before {
+  content: '↓ ';
+  color: var(--text-muted);
+}
+
+.anatomy-resource-link:hover {
+  color: var(--black);
+  border-bottom-color: var(--black);
+}
+
 .anatomy-type-tag {
   display: inline-block;
   font-family: var(--font-mono);
@@ -1081,6 +1114,25 @@ body.anatomy-page {
   font-style: italic;
   line-height: 1.75;
   color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+/* ── Footnotes ── */
+.anatomy-footnotes {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.anatomy-footnotes p {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.5em;
+}
+
+.anatomy-footnotes p:last-child {
   margin-bottom: 0;
 }
 
