@@ -42,4 +42,3 @@ A stable system is not one that avoids failure. It is one in which no failure ca
 
 ---
 
-*Blackwood Analysis 004 — Published May 2026*

@@ -51,4 +51,3 @@ The system does not fail because it is attacked. It fails because it cannot stop
 
 ---
 
-*Blackwood Analysis 003 — Published April 2026*

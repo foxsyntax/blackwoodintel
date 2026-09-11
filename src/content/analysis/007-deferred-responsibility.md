@@ -11,9 +11,9 @@ When recognition of loss is systematically disincentivized, delay ceases to be a
 ## Risk Does Not Disappear. It Migrates.
 Risk transfer is not risk elimination. The distinction is elementary in theory and consistently ignored in practice.
 
-When Basel III raised capital requirements for leveraged lending, banks did not absorb the constraint and reduce credit creation. They exited the holding function while preserving the origination function. Credit continued flowing. The risk attached to that credit migrated outward, from regulated balance sheets into private funds, from private funds into insurance portfolios, from insurance portfolios into pension allocations, and ultimately into the retirement savings of people who neither originated the risk nor understood it
+When Basel III raised capital requirements for leveraged lending, banks did not absorb the constraint and reduce credit creation.¹ They exited the holding function while preserving the origination function. Credit continued flowing. The risk attached to that credit migrated outward, from regulated balance sheets into private funds, from private funds into insurance portfolios, from insurance portfolios into pension allocations, and ultimately into the retirement savings of people who neither originated the risk nor understood it
 
-At each transfer, the risk remained the same size. What changed was the distance between the risk and the entity capable of recognizing it. This is the first mechanism. Not opacity by design, opacity as a natural consequence of distance. A bank holding a loan knows the borrower. A pension fund holding a tranche of a fund holding a portfolio of loans to companies the fund manager selected knows almost nothing about the underlying exposure. The information exists somewhere in the chain. No single node holds enough of it to reconstruct the full picture.
+At each transfer, the risk remained the same size. What changed was the distance between the risk and the entity capable of recognizing it. This is the first mechanism: not opacity by design, but opacity as a natural consequence of distance. A bank holding a loan knows the borrower. A pension fund holding a tranche of a fund holding a portfolio of loans to companies the fund manager selected knows almost nothing about the underlying exposure. The information exists somewhere in the chain. No single node holds enough of it to reconstruct the full picture.
 
 Visibility does not collapse because anyone concealed it. It degrades because ownership became distributed faster than the infrastructure required to track it could be built. By the time the risk reaches its final holder, the graph connecting origination to exposure has become too fragmented for any participant to read completely: including the regulators attempting to map it from the outside.
 
@@ -58,4 +58,7 @@ Distributed accountability does not distribute risk. It distributes the blindnes
 
 ---
 
-*Blackwood Analysis 007 — Published June 2026*
+---
+
+¹ Basel Committee on Banking Supervision, "Basel III: A global regulatory framework for more resilient banks and banking systems," Bank for International Settlements, December 2010 (revised June 2011). The leverage ratio constraints and capital surcharges raised the cost of holding leveraged loans on bank balance sheets, accelerating their transfer into less-regulated vehicles — primarily CLOs, private credit funds, and insurance-linked structures — while origination volumes remained largely intact.
+

@@ -54,4 +54,3 @@ Under stable conditions, these constraints remain mostly invisible. Under propag
 
 ---
 
-*Blackwood Analysis 005 — Published May 2026*

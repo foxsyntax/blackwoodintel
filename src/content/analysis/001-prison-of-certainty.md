@@ -29,7 +29,7 @@ A system does not seek truth. It seeks coherence with itself. Over time, this cr
 
 ## The Aztec Misclassification
 
-A belief system is not just a model of the world. It is the condition under which the world remains intelligible. The Aztecs did not fail because they lacked information. They had warnings. They had sightings. They had evidence of intrusion. What they lacked was a framework in which the threat could exist. Montezuma did not misclassify the Spanish out of ignorance. He reinterpreted them out of necessity. Within the Aztec worldview, the arrival of unknown figures from the sea could only be understood through existing belief. The possibility of a foreign, opportunistic invader did not exist within that system.
+A belief system is not just a model of the world. It is the condition under which the world remains intelligible. The Aztecs did not fail because they lacked information. They had warnings. They had sightings. They had evidence of intrusion. What they lacked was a framework in which the threat could exist. Montezuma did not misclassify the Spanish out of ignorance. He reinterpreted them out of necessity. Within the Aztec worldview, the arrival of unknown figures from the sea could only be understood through existing belief. The possibility of a foreign, opportunistic invader did not exist within that system.¹
 
 It is often easier for a system to reinterpret reality than to admit that its model of reality is broken. Centuries of dominance did not strengthen the system’s perception. They narrowed it. Victory reinforced the assumptions that made victory possible, until those assumptions became inseparable from reality itself. The system was optimized for a game that was no longer being played.
 
@@ -43,4 +43,5 @@ What falls outside of the established logic it is not ignored. It is rendered as
 
 ---
 
-*Blackwood Analysis 001 — Published April 2026*
+¹ The specific role of Aztec cosmology in shaping Montezuma's response to the Spanish — including whether he interpreted Cortés through any particular theological framework — is historically contested. The "Quetzalcoatl hypothesis," in which Aztec leadership mistook the conquistadors for returning deities, has been substantially challenged as a largely post-conquest construction. See Matthew Restall, *Seven Myths of the Spanish Conquest* (Oxford University Press, 2003), ch. 5. The structural point here — that existing interpretive categories constrained how anomalous information could be processed — does not depend on which specific categories were invoked.
+
