@@ -13,6 +13,8 @@ A system cannot operate in the absence of causality. When an event cannot be ass
 
 To continue functioning, the system produces an explanation.
 
+A fund experiences an unexpected drawdown. The actual cause, a structural shift in the correlation assumptions underlying the position, is not immediately accessible. The system cannot operate without a cause assigned to the event. It selects one: temporary dislocation, counterparty behavior, a data anomaly. That cause becomes operational. Risk parameters are adjusted around it. The position is held because the selected cause implies recovery. The actual cause continues operating, unaddressed, inside a framework now organized around a different explanation.
+
 ## The Necessity of Cause
 Causality is not optional. It is a requirement for cognition to function. Without cause, there is no continuity, and without continuity, no basis for action. A system that cannot explain what has occurred cannot decide what to do next. An unexplained outcome cannot be tolerated. It must be resolved.
 

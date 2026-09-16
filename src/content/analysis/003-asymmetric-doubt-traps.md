@@ -33,6 +33,8 @@ At this point, the objective shifts. The system is no longer trying to determine
   </div>
 </dl>
 
+A counterparty signals repeatedly that terms are unacceptable. The other side cannot dismiss the possibility that a deal remains achievable — the cost of abandoning that possibility is too high. Each negative signal is reinterpreted: a negotiating posture, a temporary constraint, a test of commitment. The system is no longer reading the counterparty. It is reading a projection of the counterparty it cannot afford to abandon. Recursion does not emerge from deception. It emerges from the inability to make the possibility cost zero.
+
 ## Asymmetric Doubt
 The system is caught between wanting the outcome to be true and being unable to trust that it is. This contradiction does not resolve itself. It compounds.
 

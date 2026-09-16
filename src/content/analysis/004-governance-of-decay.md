@@ -9,6 +9,8 @@ mechanisms: ["state-dependent loss", "transition forcing", "failure condition in
 
 Two losing strategies should not produce a winning system. Yet, under certain conditions, they do. Not because either becomes profitable, but because each is only losing under a condition the system refuses to hold.
 
+Take a firm running two strategies simultaneously: aggressive expansion, which fails when credit tightens, and defensive consolidation, which fails when competitors are growing. Neither is a winning strategy. Each is only losing under a specific condition. The firm does not alternate by choice. It transitions precisely when each strategy's failure condition begins to stabilize, before the loss can compound. What appears as indecision is the only form of control available. The system survives not by finding the right strategy, but by ensuring no failure condition is held long enough to complete.
+
 ## The Architecture of Flow
 What appears as sequence is not sequence. It is movement. A system is not defined by the quality of its actions, but by how it moves between its weakest states.
 
