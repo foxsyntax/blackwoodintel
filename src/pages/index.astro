@@ -30,9 +30,12 @@ const signals = (await getCollection('signals'))
 
       <h1 class="sr-only">Blackwood Intelligence</h1>
 
+      <p class="index-lede">Forensic analysis of systems, incentives, and structural failure — how organizations, markets, and institutions collapse from the inside.</p>
+
       <!-- Analysis -->
       <section>
         <h2 class="section-heading">Analysis</h2>
+        <p class="section-sub">Long-form structural analysis</p>
         <hr class="heavy" />
 
         {analyses.length === 0 ? (
@@ -71,6 +74,7 @@ const signals = (await getCollection('signals'))
       <!-- Anatomy -->
       <section>
         <h2 class="section-heading">Anatomy</h2>
+        <p class="section-sub">Forensic case studies of institutional failure</p>
         <hr class="heavy" />
 
         {anatomyCases.length === 0 ? (
@@ -110,6 +114,7 @@ const signals = (await getCollection('signals'))
       <!-- Signals -->
       <section>
         <h2 class="section-heading">Signals</h2>
+        <p class="section-sub">Short observations on emerging structural tensions</p>
         <hr class="heavy" />
 
         {signals.length === 0 ? (

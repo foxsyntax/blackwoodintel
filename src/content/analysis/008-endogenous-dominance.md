@@ -2,6 +2,7 @@
 title: "On Endogenous Dominance"
 number: "008"
 description: "How Power Manufactures the Conditions of Its Own Continuation"
+mechanisms: ["recursive advantage", "trajectory superiority", "capability-environment fit"]
 pubDate: 2026-09-11
 status: "Published"
 ---

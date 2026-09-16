@@ -12,6 +12,7 @@ const analysis = defineCollection({
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     status: z.string().default('Published'),
+    mechanisms: z.array(z.string()).default([]),
   }),
 });
 

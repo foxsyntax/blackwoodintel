@@ -226,6 +226,24 @@ hr.heavy {
   line-height: 1.2;
 }
 
+.section-sub {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-top: 0.3rem;
+  margin-bottom: 0.85rem;
+}
+
+.index-lede {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.75rem;
+  max-width: 56ch;
+}
+
 /* --- Analysis Archive List — Case File Layout --- */
 
 .analysis-list {
@@ -410,6 +428,22 @@ hr.heavy {
   line-height: 1.65;
   font-style: italic;
   margin-bottom: 0;
+}
+
+.article-mechanisms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+}
+
+.mechanism-chip {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  border: 1px solid var(--gray-200);
+  padding: 0.15rem 0.55rem;
+  letter-spacing: 0.02em;
 }
 
 .article-meta {

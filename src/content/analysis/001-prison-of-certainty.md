@@ -4,6 +4,7 @@ number: "001"
 description: "Systems rarely fail because they are weak. They fail because they cannot perceive what threatens them."
 pubDate: 2026-04-13
 status: "Published"
+mechanisms: ["ontology lock-in", "inductive trap", "interpretive closure"]
 ---
 
 The greatest threats are rarely invisible. They are simply unrecognizable to those who face them.

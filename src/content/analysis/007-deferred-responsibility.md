@@ -4,6 +4,7 @@ number: "007"
 description: "When Distributed Accountability Creates Centralized Blindness"
 pubDate: 2026-06-08
 status: "Published"
+mechanisms: ["accountability diffusion", "visibility orphaning", "delay architecture"]
 ---
 
 When recognition of loss is systematically disincentivized, delay ceases to be a temporary response. It becomes a structural feature of the system.

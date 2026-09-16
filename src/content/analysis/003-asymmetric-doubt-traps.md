@@ -4,6 +4,7 @@ number: "003"
 description: "A system collapses not because it is deceived, but because ignoring a possibility carries a cost."
 pubDate: 2026-04-28
 status: "Published"
+mechanisms: ["recursive commitment", "cost-of-ignoring", "possibility trap"]
 ---
 
 Recursion does not emerge from a lack of information. It emerges from the inability to ignore a possibility that might matter.

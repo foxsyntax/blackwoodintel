@@ -8,7 +8,7 @@ import { SITE_URL } from '../consts';
 
 type Props = CollectionEntry<'analysis'>['data'] & { readingTime?: number };
 
-const { title, number, description, pubDate, updatedDate, status, readingTime } = Astro.props;
+const { title, number, description, pubDate, updatedDate, status, readingTime, mechanisms } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? SITE_URL).href;
 
@@ -48,6 +48,13 @@ const jsonLd = {
           <span class="article-id">Blackwood Analysis {number}</span>
           <h1 class="article-title">{title}</h1>
           {description && <p class="article-subtitle">{description}</p>}
+          {mechanisms && mechanisms.length > 0 && (
+            <div class="article-mechanisms">
+              {mechanisms.map((m: string) => (
+                <span class="mechanism-chip">{m}</span>
+              ))}
+            </div>
+          )}
           <div class="article-meta">
             <FormattedDate date={pubDate} />
             {updatedDate && (

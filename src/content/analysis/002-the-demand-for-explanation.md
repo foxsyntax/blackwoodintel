@@ -4,6 +4,7 @@ number: "002"
 description: "A system cannot operate without causality. When none is available, it will construct one."
 pubDate: 2026-04-20 
 status: "Published"
+mechanisms: ["causal substitution", "coherence maintenance", "false cause propagation"]
 ---
 
 There are outcomes the mind cannot leave unexplained.

@@ -4,6 +4,7 @@ number: "006"
 description: "Modeling Entities That Refuse To Remain The Same."
 pubDate: 2026-05-29
 status: "Published"
+mechanisms: ["target discontinuity", "prediction assumption collapse", "recursive model fragility"]
 ---
 
 Prediction does not fail because information is absent. It fails because the thing being modeled stops holding still.

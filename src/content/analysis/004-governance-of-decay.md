@@ -4,6 +4,7 @@ number: "004"
 description: "A system does not collapse because it loses. It collapses when loss is allowed to settle."
 pubDate: 2026-05-04
 status: "Published"
+mechanisms: ["state-dependent loss", "transition forcing", "failure condition incompatibility"]
 ---
 
 Two losing strategies should not produce a winning system. Yet, under certain conditions, they do. Not because either becomes profitable, but because each is only losing under a condition the system refuses to hold.

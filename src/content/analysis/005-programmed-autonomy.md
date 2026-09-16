@@ -4,6 +4,7 @@ number: "005"
 description: "Detection is not the bottleneck. Legitimacy is."
 pubDate: 2026-05-21
 status: "Published"
+mechanisms: ["legitimacy bottleneck", "edge-center latency", "coherence-mobility tradeoff"]
 ---
 
 A system does not fail because its edge conditions stop seeing. It fails because what they see cannot become actionable before the environment requiring action has already changed.
