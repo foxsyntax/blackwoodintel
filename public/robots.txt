@@ -9,9 +9,6 @@ Disallow: /
 User-agent: ChatGPT-User
 Disallow: /
 
-User-agent: OAI-SearchBot
-Disallow: /
-
 User-agent: CCBot
 Disallow: /
 
@@ -19,9 +16,6 @@ User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Claude-Web
-Disallow: /
-
-User-agent: PerplexityBot
 Disallow: /
 
 User-agent: Bytespider
@@ -52,8 +46,8 @@ User-agent: DataForSeoBot
 Disallow: /
 
 # ── Everything else: allowed ──
-# Includes: Googlebot, Bingbot, Twitterbot, Discordbot,
-# TelegramBot, facebookexternalhit, LinkedInBot, Slackbot, etc.
+# Includes: Googlebot, Bingbot, OAI-SearchBot, PerplexityBot,
+# Twitterbot, Discordbot, facebookexternalhit, LinkedInBot, Slackbot, etc.
 
 User-agent: *
 Allow: /
