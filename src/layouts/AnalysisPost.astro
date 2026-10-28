@@ -39,6 +39,11 @@ const jsonLd = {
   <head>
     <BaseHead title={title} description={description} type="article" />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <meta name="citation_title" content={title} />
+    <meta name="citation_author" content="Blackwood Intelligence" />
+    <meta name="citation_publication_date" content={pubDate.toISOString().split('T')[0].replace(/-/g, '/')} />
+    <meta name="citation_technical_report_institution" content="Blackwood Intelligence" />
+    <meta name="citation_abstract_html_url" content={canonicalURL} />
   </head>
   <body>
     <Header />
