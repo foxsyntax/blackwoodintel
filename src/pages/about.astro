@@ -70,10 +70,27 @@ import Header from '../components/Header.astro';
           </div>
         </div>
 
+        <div class="about-row">
+          <span class="about-row__label">Situations We Examine</span>
+          <div class="about-row__content">
+            <p>Blackwood takes on situations where the prevailing explanation no longer adequately accounts for what is happening.</p>
+            <p>This may include:</p>
+            <ul>
+              <li><strong>Contested decisions.</strong> Multiple actors operate under conflicting interests, rights, or constraints, and the consequences of their choices extend beyond any single party.</li>
+              <li><strong>Failed interventions.</strong> A strategy, restructuring, policy, or corrective measure fails to achieve its stated objective, or produces consequences that undermine it.</li>
+              <li><strong>Structural contradictions.</strong> An organisation, institution, or market behaves in ways that its stated incentives, assumptions, or objectives cannot adequately explain.</li>
+              <li><strong>Asymmetric positions.</strong> Formal authority, information, economic exposure, and practical control are distributed unevenly, making conventional assessments of power or vulnerability incomplete.</li>
+              <li><strong>Unusual situations.</strong> An event, pattern, or emerging problem resists familiar explanations, and understanding its underlying mechanism could materially change how it is approached.</li>
+            </ul>
+            <p>We are not limited to a particular industry. The relevant question is whether the situation contains a structural problem worth examining.</p>
+            <p>Selected cases may be considered for independent analysis or private research engagements.</p>
+          </div>
+        </div>
+
         <div class="about-row about-row--contact">
           <span class="about-row__label">Contact</span>
           <div class="about-row__content">
-            <p>Blackwood occasionally takes on cases alongside the published work. If you're working through something that might fit, write to us.</p>
+            <p>To discuss a situation:</p>
             <div class="about-contact-links">
               <a href="mailto:analysis@blackwoodintel.com">analysis@blackwoodintel.com</a>
             </div>
@@ -151,6 +168,24 @@ import Header from '../components/Header.astro';
 
   .about-row__content p:last-child {
     margin-bottom: 0;
+  }
+
+  .about-row__content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.9em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .about-row__content li {
+    font-family: var(--font-serif);
+    font-size: 0.9875rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    padding-left: 1rem;
+    border-left: 2px solid var(--gray-200);
   }
 
   /* ── Engagements list ── */
