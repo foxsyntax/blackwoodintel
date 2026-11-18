@@ -1151,6 +1151,65 @@ body.anatomy-page {
   margin-bottom: 0;
 }
 
+/* ── Tables ── */
+.anatomy-section__body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.75rem 0;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.anatomy-section__body thead tr {
+  border-bottom: 2px solid var(--black);
+}
+
+.anatomy-section__body th {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.4rem 0.875rem 0.4rem 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.anatomy-section__body td {
+  padding: 0.75rem 0.875rem 0.75rem 0;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.anatomy-section__body td:not(:first-child),
+.anatomy-section__body th:not(:first-child) {
+  padding-left: 1rem;
+}
+
+.anatomy-section__body tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 620px) {
+  .anatomy-section__body table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  .anatomy-section__body th {
+    white-space: nowrap;
+  }
+
+  .anatomy-section__body td {
+    min-width: 160px;
+  }
+}
+
 /* ── Footnotes ── */
 .anatomy-footnotes {
   margin-top: 3rem;
